@@ -1,0 +1,26 @@
+syntax="proto3";
+option go_package = ".operation_history_server";
+package operation_history_server;
+
+service OperationHistory {
+
+  rpc SendHistory (SendHistoryRequest) returns (SendHistoryResponse);
+
+}
+
+message SendHistoryRequest{
+  string userID = 1;
+}
+
+message SendHistoryResponse{
+  string transactionName = 1;
+  string date = 2;
+  string time = 3;
+  string amount = 4;
+  string currency = 5;
+  string payeeName = 6;
+  string payeeAccountNumber = 7;
+  string cardNumber = 8;
+  string typeOperation = 9;
+
+}
